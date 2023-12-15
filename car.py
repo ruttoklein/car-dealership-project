@@ -7,10 +7,9 @@ Base = declarative_base()
 class Car(Base):
     __tablename__ = 'cars'
 
-    id = Column(Integer, primary_key=True, index=True)
-    model = Column(String, index=True)
-    year = Column(Integer)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    model = Column(String, )
+    year = (Integer,)
     in_stock = Column(Integer)
     sold_out = Column(Integer)
 
-    transactions = relationship('Transaction', back_populates='car')
